@@ -1,0 +1,15 @@
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.fs
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/AkkaMUD.exe.config
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/AkkaMUD.exe.mdb
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/AkkaMUD.pdb
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/AkkaMUD.exe
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/obj/Debug/AkkaMUD.exe
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/obj/Debug/AkkaMUD.exe.mdb
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/obj/Debug/AkkaMUD.pdb
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/Akka.dll
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/Akka.FSharp.dll
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/FSharp.PowerPack.dll
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/FSharp.PowerPack.Linq.dll
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/FsPickler.dll
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/Newtonsoft.Json.dll
+/mnt/hgfs/source/AkkaMUD/AkkaMUD/bin/Debug/System.Collections.Immutable.dll

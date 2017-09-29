@@ -1,0 +1,2 @@
+#!/bin/bash
+xterm -e "mono AkkaMUD/bin/Debug/AkkaMUD.exe $1 $2 $3"
