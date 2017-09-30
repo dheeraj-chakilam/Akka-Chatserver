@@ -3,8 +3,6 @@
 open Akka.FSharp
 open Akka.Actor
 
-let aliveThreshold = 1000L
-
 type RoomState = {
     actors: Set<IActorRef>
     master: IActorRef option
@@ -16,20 +14,24 @@ type RoomMsg =
     | Join of IActorRef
     | JoinMaster of IActorRef
     | Heartbeat of string * IActorRef * int64
-    | SendHeartbeat of string
     | Alive of int64 * string
     | Broadcast of string
     | Rebroadcast of string
     | Get
     | Leave of IActorRef
 
-let room (mailbox: Actor<RoomMsg>) =
+let room selfID beatrate aliveThreshold (mailbox: Actor<RoomMsg>) =
     let rec loop state = actor {
         let! msg = mailbox.Receive()
         let sender = mailbox.Sender()
 
         match msg with
         | Join ref ->
+            mailbox.Context.System.Scheduler.ScheduleTellRepeatedly(System.TimeSpan.FromMilliseconds 0.,
+                                            System.TimeSpan.FromMilliseconds beatrate,
+                                            ref,
+                                            sprintf "heartbeat %s" selfID)
+            
             return! loop { state with actors = Set.add ref state.actors }
 
         | JoinMaster ref ->
@@ -38,12 +40,6 @@ let room (mailbox: Actor<RoomMsg>) =
         | Heartbeat (id, ref, ms) ->
             printfn "heartbeat %s" id
             return! loop { state with beatmap = state.beatmap |> Map.add id (ref,ms) }
-        
-        | SendHeartbeat id ->
-            state.actors
-            |> Set.iter (fun a -> a <! (sprintf "heartbeat %s" id))
-            
-            return! loop state
 
         | Alive (currMs, selfID) ->
             match state.master with
