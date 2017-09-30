@@ -1,3 +1,7 @@
 .idea/
 *.iml
 docs/build/
+test_output/
+results1
+ChatServer/bin/*
+ChatServer/obj/*
