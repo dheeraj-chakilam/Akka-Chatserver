@@ -26,6 +26,5 @@ let main argv =
 
     | _ -> printfn "Incorrect arguments (%A)" argv
     
-    while true do
-        ()
+    System.Console.ReadLine() |> ignore
     0
